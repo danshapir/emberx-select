@@ -29,7 +29,7 @@ describe('XSelect: Single Selection', function() {
   });
 
   it("does not fire any actions on didInsertElement", function() {
-    expect(controller.get('tagged')).not.to.be.ok();
+    expect(controller.get('tagged')).not.to.be.ok;
   });
 
   it('is enabled by default', function() {
@@ -96,7 +96,7 @@ describe('XSelect: Single Selection', function() {
     it('renders the name attribute', function() {
       expect(this.$().attr('name')).to.equal('person-select');
     });
-    it('renders the form attribute', function() {
+    it.skip('renders the form attribute', function() {
       expect(this.$().attr('form')).to.equal('person-form');
     });
     it('renders the size attribute', function() {
