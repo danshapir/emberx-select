@@ -17,7 +17,7 @@ describe('XSelect: Single Selection', function() {
   });
   beforeEach(function() {
     var el = Ember.$('select');
-    select = Ember.View.views[el.attr('id')];
+    select = App.__container__.lookup('-view-registry:main')[el.attr('id')];
     this.$ = function() {
       return select.$.apply(select, arguments);
     };
@@ -76,7 +76,7 @@ describe('XSelect: Single Selection', function() {
 
   describe("when no option is selected", function() {
     beforeEach(function() {
-      this.$().prop('selectedIndex', 4).trigger('change');
+      return this.$().prop('selectedIndex', 3).trigger('change');
     });
     it("has no value", function() {
       expect(controller.get('tagged')).to.equal(undefined);

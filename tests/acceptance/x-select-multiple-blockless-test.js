@@ -9,7 +9,7 @@ import { bastion, stanley, charles } from 'dummy/mixins/folks';
 
 var App;
 
-describe('XSelect: Multiple Selection', function() {
+describe('XSelect: Multiple Selection (blockless)', function() {
   var select, controller;
   beforeEach(function() {
     App = startApp();
@@ -17,7 +17,7 @@ describe('XSelect: Multiple Selection', function() {
   });
   beforeEach(function() {
     var el = Ember.$('select');
-    select = Ember.View.views[el.attr('id')];
+    select = App.__container__.lookup('-view-registry:main')[el.attr('id')];
     this.$ = function() {
       return select.$.apply(select, arguments);
     };

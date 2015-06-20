@@ -45,6 +45,15 @@ export default Ember.Component.extend({
   multiple: false,
 
   /**
+   * Something something `value`.. TODO
+   *
+   * @property value
+   * @type String
+   * @default null
+   */
+  value: null,
+
+  /**
    * Bound to the `tabindex` attribute on the native <select> tag.
    *
    * @property tabindex

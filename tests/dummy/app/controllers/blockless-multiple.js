@@ -3,6 +3,9 @@ import Folks from 'dummy/mixins/folks';
 
 export default Ember.Controller.extend(Folks, {
   isDisabled: false,
+  something: Ember.observer('model.[]', function() {
+    console.log(this.get('model'));
+  }),
   actions: {
     tagYouAreIt: function(object) {
       this.tagged = object;

@@ -17,7 +17,7 @@ describe('XSelect: Single Selection Blockless', function() {
   });
   beforeEach(function() {
     var el = Ember.$('select');
-    select = Ember.View.views[el.attr('id')];
+    select = App.__container__.lookup('-view-registry:main')[el.attr('id')];
     this.$ = function() {
       return select.$.apply(select, arguments);
     };

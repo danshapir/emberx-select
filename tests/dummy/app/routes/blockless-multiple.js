@@ -12,6 +12,10 @@ export default Ember.Route.extend(Folks, {
   setupController(controller, model) {
     this._super(...arguments);
     controller.set('it', model);
+
+    // console.log(model);
+    // console.log(controller.get('it'));
+
     controller.set('folks', Ember.A([this.get('charles'), this.get('bastion'), this.get('stanley') ]));
   }
 });
